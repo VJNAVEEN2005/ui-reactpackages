@@ -26,7 +26,7 @@ import {
 } from "@tabler/icons-react";
 import { useNavigate, useLocation, BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import { Input } from "./components";
+import { Input, Search } from "./components";
 
 
 // Demo Component
@@ -156,6 +156,13 @@ const DashboardContent = () => (
         rightContent={<IconSquareChevronsLeft size={20} style={{ color: "#4f46e5" }} />}
         leftContent={<IconChevronRight size={20} style={{ color: "#4f46e5" }} />}
         variant="glassmorphism"
+    />
+    <Search placeholder="Search..." 
+        placeholderColor="#9ca3af"
+        variant="glassmorphism"
+        rightContent={<IconSquareChevronsLeft size={20} style={{ color: "#4f46e5" }} />}
+        leftContent={<IconChevronRight size={20} style={{ color: "#4f46e5" }} />}
+        suggestions={['React', 'JavaScript', 'TypeScript']}
     />
     <p 
       style={{ 

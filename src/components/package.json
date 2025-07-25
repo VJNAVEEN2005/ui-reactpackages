@@ -1,7 +1,7 @@
 {
   "name": "vj-ui-components",
-  "version": "2.1.0",
-  "description": "A collection of beautiful, customizable React UI components including versatile navigation with dual layout support (sidebar/top), stylish input fields with icon support, dropdown menus, glassmorphism design, and smooth animations",
+  "version": "2.2.0",
+  "description": "A collection of beautiful, customizable React UI components including versatile navigation with dual layout support (sidebar/top), stylish input fields with icon support, advanced search with recommendations and autocomplete, dropdown menus, glassmorphism design, and smooth animations",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
@@ -10,6 +10,8 @@
     "Navbar.css",
     "Input.jsx",
     "Input.css",
+    "Search.jsx",
+    "Search.css",
     "index.js",
     "index.d.ts",
     "README.md"
@@ -30,6 +32,10 @@
     "sidebar",
     "navigation",
     "input",
+    "search",
+    "autocomplete",
+    "recommendations",
+    "suggestions",
     "form",
     "fields",
     "icons",
@@ -39,7 +45,8 @@
     "ui-library",
     "react-components",
     "responsive",
-    "customizable"
+    "customizable",
+    "vj-ui-components"
   ],
   "author": "Naveen VJ",
   "license": "MIT",

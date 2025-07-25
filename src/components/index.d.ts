@@ -71,8 +71,61 @@ export interface InputProps {
   readOnly?: boolean;
 }
 
+export interface SearchSuggestion {
+  title?: string;
+  description?: string;
+  value?: string;
+  category?: string;
+  metadata?: any;
+}
+
+export interface SearchProps {
+  placeholder?: string;
+  value?: string;
+  onChange?: (value: string) => void;
+  onSelect?: (item: string | SearchSuggestion) => void;
+  onSearch?: (searchTerm: string) => void;
+  
+  // Data sources
+  suggestions?: (string | SearchSuggestion)[];
+  recentSearches?: string[];
+  trendingSearches?: (string | SearchSuggestion)[];
+  
+  // Theming props
+  primaryColor?: string;
+  secondaryColor?: string;
+  backgroundColor?: string;
+  textColor?: string;
+  placeholderColor?: string;
+  borderColor?: string;
+  focusBorderColor?: string;
+  
+  // Styling props
+  size?: 'sm' | 'md' | 'lg';
+  variant?: 'default' | 'filled' | 'outlined' | 'glassmorphism';
+  borderRadius?: string;
+  className?: string;
+  
+  // Behavior props
+  showRecentSearches?: boolean;
+  showTrendingSearches?: boolean;
+  showSuggestions?: boolean;
+  maxResults?: number;
+  enableAutocomplete?: boolean;
+  debounceMs?: number;
+  clearOnSelect?: boolean;
+  
+  // Custom content
+  leftIcon?: ReactNode;
+  emptyStateMessage?: string;
+  recentSearchesTitle?: string;
+  trendingSearchesTitle?: string;
+  suggestionsTitle?: string;
+}
+
 declare const Navbar: React.FC<NavbarProps>;
 declare const Input: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>>;
+declare const Search: React.ForwardRefExoticComponent<SearchProps & React.RefAttributes<HTMLInputElement>>;
 
 export default Navbar;
-export { Navbar, Input };
+export { Navbar, Input, Search };
