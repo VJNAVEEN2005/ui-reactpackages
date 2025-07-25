@@ -34,7 +34,7 @@ A feature-rich input component with icon support, multiple variants, custom cont
 ## Installation
 
 ```bash
-npm install @vjnav/ui-components
+npm install vj-ui-components
 ```
 
 ### Peer Dependencies

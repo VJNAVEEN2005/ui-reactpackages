@@ -155,6 +155,7 @@ const DashboardContent = () => (
         style={{ width: "100%", padding: "0.5rem 1rem", borderRadius: "8px", border: "1px solid #e2e8f0" }}
         rightContent={<IconSquareChevronsLeft size={20} style={{ color: "#4f46e5" }} />}
         leftContent={<IconChevronRight size={20} style={{ color: "#4f46e5" }} />}
+        variant="glassmorphism"
     />
     <p 
       style={{ 

@@ -1,5 +1,5 @@
 {
-  "name": "vjnav-ui-components",
+  "name": "vj-ui-components",
   "version": "2.1.0",
   "description": "A collection of beautiful, customizable React UI components including versatile navigation with dual layout support (sidebar/top), stylish input fields with icon support, dropdown menus, glassmorphism design, and smooth animations",
   "main": "index.js",
@@ -45,11 +45,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vjnav/ui-components.git"
+    "url": "https://github.com/VJNAVEEN2005/ui-reactpackages.git"
   },
-  "homepage": "https://github.com/vjnav/ui-components#readme",
+  "homepage": "https://github.com/VJNAVEEN2005/ui-reactpackages#readme",
   "bugs": {
-    "url": "https://github.com/vjnav/ui-components/issues"
+    "url": "https://github.com/VJNAVEEN2005/ui-reactpackages/issues"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
