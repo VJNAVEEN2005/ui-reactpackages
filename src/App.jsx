@@ -26,11 +26,13 @@ import {
 } from "@tabler/icons-react";
 import { useNavigate, useLocation, BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import { Input, Search } from "./components";
+import { Input, Modal, Search } from "./components";
 
 
 // Demo Component
 const App = () => {
+  
+
   const topNavItems = [
     { icon: <IconHome2 />, text: "Dashboard", path: "/" },
     { 
@@ -79,6 +81,8 @@ const App = () => {
     },
   ];
 
+  
+
   return (
     <div style={{ display: "flex", height: "100vh", background: "#f8fafc" }}>
       <Navbar
@@ -125,7 +129,9 @@ const App = () => {
 };
 
 // Content Components
-const DashboardContent = () => (
+const DashboardContent = () =>{ 
+const [isModalOpen, setIsModalOpen] = useState(false);
+  return (
   <div
     style={{
       maxWidth: "800px",
@@ -164,6 +170,18 @@ const DashboardContent = () => (
         leftContent={<IconChevronRight size={20} style={{ color: "#4f46e5" }} />}
         suggestions={['React', 'JavaScript', 'TypeScript']}
     />
+    <button onClick={() => setIsModalOpen(true)}>Open Modal</button>
+    
+    <Modal
+      isOpen={isModalOpen}
+      onClose={() => setIsModalOpen(false)}
+      title="Welcome to VJ Dashboard"
+      textColor="#1f2937"
+      size="md"
+      variant="glassmorphism"
+    >
+      <p>This is a simple modal example. You can customize it as needed.</p>
+    </Modal>
     <p 
       style={{ 
         marginTop: "1.5rem",
@@ -224,7 +242,7 @@ const DashboardContent = () => (
       </div>
     </div>
   </div>
-);
+)};
 
 const AnalyticsContent = () => (
   <div

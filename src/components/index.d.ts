@@ -123,9 +123,66 @@ export interface SearchProps {
   suggestionsTitle?: string;
 }
 
+export interface ModalProps {
+  // Basic props
+  isOpen?: boolean;
+  onClose?: () => void;
+  onConfirm?: () => void;
+  onCancel?: () => void;
+  
+  // Content props
+  title?: string;
+  children?: ReactNode;
+  footer?: ReactNode;
+  
+  // Theming props
+  primaryColor?: string;
+  secondaryColor?: string;
+  backgroundColor?: string;
+  backdropColor?: string;
+  textColor?: string;
+  borderColor?: string;
+  
+  // Size and styling props
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
+  variant?: 'default' | 'glassmorphism' | 'minimal' | 'card';
+  borderRadius?: string;
+  className?: string;
+  
+  // Behavior props
+  closeOnBackdropClick?: boolean;
+  closeOnEscape?: boolean;
+  showCloseButton?: boolean;
+  showMaximizeButton?: boolean;
+  preventBodyScroll?: boolean;
+  
+  // Animation props
+  animationDuration?: number;
+  enterAnimation?: 'fade' | 'fadeScale' | 'slideUp' | 'slideDown' | 'slideLeft' | 'slideRight';
+  exitAnimation?: 'fade' | 'fadeScale' | 'slideUp' | 'slideDown' | 'slideLeft' | 'slideRight';
+  
+  // Button props
+  confirmText?: string;
+  cancelText?: string;
+  showConfirmButton?: boolean;
+  showCancelButton?: boolean;
+  confirmButtonVariant?: 'primary' | 'secondary';
+  cancelButtonVariant?: 'primary' | 'secondary';
+  
+  // Advanced props
+  backdrop?: boolean;
+  fullScreen?: boolean;
+  centered?: boolean;
+  scrollable?: boolean;
+  headerClassName?: string;
+  bodyClassName?: string;
+  footerClassName?: string;
+}
+
 declare const Navbar: React.FC<NavbarProps>;
 declare const Input: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>>;
 declare const Search: React.ForwardRefExoticComponent<SearchProps & React.RefAttributes<HTMLInputElement>>;
+declare const Modal: React.FC<ModalProps>;
 
 export default Navbar;
-export { Navbar, Input, Search };
+export { Navbar, Input, Search, Modal };
