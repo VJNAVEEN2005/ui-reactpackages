@@ -1,0 +1,71 @@
+/* Dropdown Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 200px;
+  }
+}
+
+/* Mobile menu slide animation */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar specific styles */
+.navbar-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Top navbar responsive behavior */
+@media (max-width: 768px) {
+  .navbar-top-nav {
+    display: none !important;
+  }
+  
+  .navbar-mobile-toggle {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar-top-nav {
+    display: flex !important;
+  }
+  
+  .navbar-mobile-toggle {
+    display: none !important;
+  }
+}
+
+/* Focus Styles for accessibility */
+.navbar-container button:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Additional hover effects */
+.navbar-item:hover {
+  transform: translateX(2px);
+}
+
+.navbar-top-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Smooth transitions for layout switching */
+.navbar-layout-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

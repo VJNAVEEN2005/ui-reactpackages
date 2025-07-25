@@ -1,0 +1,35 @@
+# Development files
+example.jsx
+*.test.js
+*.test.jsx
+*.test.ts
+*.test.tsx
+
+# Node modules
+node_modules/
+
+# Development tools
+.git/
+.gitignore
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage
+coverage/
+
+# Build artifacts (keep only what's needed)
+dist/
+build/
+
+# Source maps
+*.map

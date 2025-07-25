@@ -1,0 +1,61 @@
+{
+  "name": "vjnav-ui-components",
+  "version": "2.1.0",
+  "description": "A collection of beautiful, customizable React UI components including versatile navigation with dual layout support (sidebar/top), stylish input fields with icon support, dropdown menus, glassmorphism design, and smooth animations",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "Navbar.jsx",
+    "Navbar.css",
+    "Input.jsx",
+    "Input.css",
+    "index.js",
+    "index.d.ts",
+    "README.md"
+  ],
+  "scripts": {
+    "prepare": "echo 'Package ready for publishing'",
+    "test": "echo 'No tests specified'",
+    "publish-package": "npm publish --access public",
+    "version:patch": "npm version patch",
+    "version:minor": "npm version minor",
+    "version:major": "npm version major"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "navbar",
+    "sidebar",
+    "navigation",
+    "input",
+    "form",
+    "fields",
+    "icons",
+    "component",
+    "dropdown",
+    "glassmorphism",
+    "ui-library",
+    "react-components",
+    "responsive",
+    "customizable"
+  ],
+  "author": "Naveen VJ",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vjnav/ui-components.git"
+  },
+  "homepage": "https://github.com/vjnav/ui-components#readme",
+  "bugs": {
+    "url": "https://github.com/vjnav/ui-components/issues"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "react-router-dom": ">=6.0.0",
+    "@tabler/icons-react": ">=2.0.0"
+  },
+  "dependencies": {}
+}
