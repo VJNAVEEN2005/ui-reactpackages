@@ -4,15 +4,17 @@ import NavbarExample from './components/navbar-example';
 import InputExample from './components/input-example';
 import SearchExample from './components/search-example';
 import ModalExample from './components/modal-example';
+import AnimationTest from './components/animation-test';
 
 const MainDemo = () => {
-  const [activeTab, setActiveTab] = useState('modal');
+  const [activeTab, setActiveTab] = useState('animation');
 
   const tabs = [
     { id: 'navbar', label: 'Navbar', icon: '🧭' },
     { id: 'input', label: 'Input', icon: '📝' },
     { id: 'search', label: 'Search', icon: '🔍' },
-    { id: 'modal', label: 'Modal', icon: '📋' }
+    { id: 'modal', label: 'Modal', icon: '📋' },
+    { id: 'animation', label: 'Animations', icon: '🎭' }
   ];
 
   const renderContent = () => {
@@ -25,8 +27,10 @@ const MainDemo = () => {
         return <SearchExample />;
       case 'modal':
         return <ModalExample />;
+      case 'animation':
+        return <AnimationTest />;
       default:
-        return <ModalExample />;
+        return <AnimationTest />;
     }
   };
 

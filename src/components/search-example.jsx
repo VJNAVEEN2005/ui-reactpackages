@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search } from 'vj-ui-components';
+import { Search } from './index';
 import { 
   IconSearch, 
   IconUser, 
@@ -7,7 +7,7 @@ import {
   IconFolder, 
   IconMail,
   IconSettings,
-  IconChart,
+  IconChartBar,
   IconHome,
   IconBrandReact,
   IconBrandJavascript,
@@ -34,7 +34,7 @@ const SearchExample = () => {
       title: "Dashboard Analytics",
       description: "View detailed analytics and reports",
       category: "Analytics",
-      metadata: { type: "page", icon: <IconChart size={16} /> }
+      metadata: { type: "page", icon: <IconChartBar size={16} /> }
     },
     {
       title: "File Manager",

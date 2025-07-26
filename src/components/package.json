@@ -1,6 +1,6 @@
 {
   "name": "vj-ui-components",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "A collection of beautiful, customizable React UI components including versatile navigation with dual layout support (sidebar/top), stylish input fields with icon support, advanced search with recommendations and autocomplete, elegant modals with animations and glassmorphism design, dropdown menus, and smooth animations",
   "main": "index.js",
   "module": "index.js",

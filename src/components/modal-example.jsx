@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Modal } from 'vj-ui-components';
+import { Modal } from './index';
 import { 
   IconTrash, 
   IconEdit,
   IconSettings,
   IconUser,
-  IconInfo,
+  IconAlertCircle,
   IconAlertTriangle,
   IconCheck,
   IconX,
@@ -103,7 +103,7 @@ const ModalExample = () => {
             e.target.style.boxShadow = 'none';
           }}
           >
-            <IconInfo size={24} style={{ marginBottom: '8px' }} />
+            <IconAlertCircle size={24} style={{ marginBottom: '8px' }} />
             <h3 style={{ margin: '0 0 8px 0' }}>Basic Modal</h3>
             <p style={{ margin: 0, opacity: 0.9, fontSize: '0.9rem' }}>
               Simple modal with title and content

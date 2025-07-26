@@ -27,6 +27,7 @@ import {
 import { useNavigate, useLocation, BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import { Input, Modal, Search } from "./components";
+import MainDemo from "./MainDemo";
 
 
 // Demo Component
@@ -85,7 +86,7 @@ const App = () => {
 
   return (
     <div style={{ display: "flex", height: "100vh", background: "#f8fafc" }}>
-      <Navbar
+      {/* <Navbar
         primaryColor="#6366f1"
         secondaryColor="#4f46e5"
         heading="VJ Dashboard"
@@ -93,18 +94,17 @@ const App = () => {
         bottomdata={bottomNavItems}
         iconColor="#e2e8f0"
         textColor="#f1f5f9"
-      />
+      /> */}
       {/* Main content area */}
       <div 
         style={{ 
           flex: 1, 
-          padding: "2rem",
           background: "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
           overflow: "auto"
         }}
       >
         <Routes>
-          <Route path="/" element={<DashboardContent />} />
+          <Route path="/" element={<MainDemo />} />
           <Route path="/analytics" element={<AnalyticsContent />} />
           <Route path="/analytics/overview" element={<AnalyticsOverviewContent />} />
           <Route path="/analytics/users" element={<UserAnalyticsContent />} />

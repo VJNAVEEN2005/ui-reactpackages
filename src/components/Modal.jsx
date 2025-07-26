@@ -59,6 +59,7 @@ const Modal = ({
   ...rest
 }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
   const [isMaximized, setIsMaximized] = useState(false);
   const modalRef = useRef(null);
   const backdropRef = useRef(null);
@@ -67,23 +68,34 @@ const Modal = ({
   useEffect(() => {
     if (isOpen) {
       setIsVisible(true);
+      // Small delay to ensure the DOM is ready before starting animation
+      const animationTimer = setTimeout(() => {
+        setIsAnimating(true);
+      }, 10);
+      
       if (preventBodyScroll) {
         document.body.style.overflow = 'hidden';
       }
+      
+      return () => clearTimeout(animationTimer);
     } else {
+      setIsAnimating(false);
       if (preventBodyScroll) {
         document.body.style.overflow = '';
       }
       const timer = setTimeout(() => setIsVisible(false), animationDuration);
       return () => clearTimeout(timer);
     }
-    
+  }, [isOpen, preventBodyScroll, animationDuration]);
+
+  // Cleanup effect
+  useEffect(() => {
     return () => {
       if (preventBodyScroll) {
         document.body.style.overflow = '';
       }
     };
-  }, [isOpen, preventBodyScroll, animationDuration]);
+  }, [preventBodyScroll]);
 
   // Handle escape key
   useEffect(() => {
@@ -230,36 +242,36 @@ const Modal = ({
   // Get animation styles
   const getAnimationStyles = () => {
     const duration = `${animationDuration}ms`;
-    const animation = isOpen ? enterAnimation : exitAnimation;
+    const animation = isAnimating ? enterAnimation : exitAnimation;
     
     const animations = {
       fade: {
-        opacity: isOpen ? 1 : 0,
+        opacity: isAnimating ? 1 : 0,
         transition: `opacity ${duration} ease-in-out`,
       },
       fadeScale: {
-        opacity: isOpen ? 1 : 0,
-        transform: isOpen ? 'scale(1)' : 'scale(0.95)',
+        opacity: isAnimating ? 1 : 0,
+        transform: isAnimating ? 'scale(1)' : 'scale(0.95)',
         transition: `all ${duration} cubic-bezier(0.4, 0, 0.2, 1)`,
       },
       slideUp: {
-        opacity: isOpen ? 1 : 0,
-        transform: isOpen ? 'translateY(0)' : 'translateY(20px)',
+        opacity: isAnimating ? 1 : 0,
+        transform: isAnimating ? 'translateY(0)' : 'translateY(20px)',
         transition: `all ${duration} cubic-bezier(0.4, 0, 0.2, 1)`,
       },
       slideDown: {
-        opacity: isOpen ? 1 : 0,
-        transform: isOpen ? 'translateY(0)' : 'translateY(-20px)',
+        opacity: isAnimating ? 1 : 0,
+        transform: isAnimating ? 'translateY(0)' : 'translateY(-20px)',
         transition: `all ${duration} cubic-bezier(0.4, 0, 0.2, 1)`,
       },
       slideLeft: {
-        opacity: isOpen ? 1 : 0,
-        transform: isOpen ? 'translateX(0)' : 'translateX(20px)',
+        opacity: isAnimating ? 1 : 0,
+        transform: isAnimating ? 'translateX(0)' : 'translateX(20px)',
         transition: `all ${duration} cubic-bezier(0.4, 0, 0.2, 1)`,
       },
       slideRight: {
-        opacity: isOpen ? 1 : 0,
-        transform: isOpen ? 'translateX(0)' : 'translateX(-20px)',
+        opacity: isAnimating ? 1 : 0,
+        transform: isAnimating ? 'translateX(0)' : 'translateX(-20px)',
         transition: `all ${duration} cubic-bezier(0.4, 0, 0.2, 1)`,
       },
     };
@@ -321,7 +333,7 @@ const Modal = ({
         justifyContent: 'center',
         padding: centered ? '20px' : '20px 20px 0',
         background: backdrop ? backdropColor : 'transparent',
-        opacity: isOpen ? 1 : 0,
+        opacity: isAnimating ? 1 : 0,
         transition: `opacity ${animationDuration}ms ease-in-out`,
         overflow: scrollable ? 'auto' : 'hidden',
       }}

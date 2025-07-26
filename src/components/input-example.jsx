@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input } from '@vjnav/ui-components';
+import { Input } from './index';
 import { 
   IconUser, 
   IconMail, 
