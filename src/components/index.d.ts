@@ -1,4 +1,4 @@
-import { ReactNode, ChangeEvent, FocusEvent } from 'react';
+import { ReactNode, ChangeEvent, FocusEvent, CSSProperties } from 'react';
 
 export interface NavItem {
   icon: ReactNode;
@@ -179,10 +179,124 @@ export interface ModalProps {
   footerClassName?: string;
 }
 
+export interface LoaderProps {
+  // Progress props
+  progress?: number | null;
+  duration?: number;
+  autoStart?: boolean;
+  onComplete?: () => void;
+  
+  // Styling props
+  size?: 'small' | 'medium' | 'large';
+  variant?: 'circular' | 'linear' | 'spinner' | 'dots';
+  showPercentage?: boolean;
+  color?: string;
+  className?: string;
+  
+  // Content
+  children?: ReactNode;
+}
+
+export interface TagsProps {
+  // Data props
+  tags?: string[];
+  onTagAdd?: (tag: string) => void;
+  onTagRemove?: (tag: string) => void;
+  onTagClick?: (tag: string) => void;
+  
+  // Behavior props
+  editable?: boolean;
+  removable?: boolean;
+  clickable?: boolean;
+  maxTags?: number | null;
+  placeholder?: string;
+  
+  // Styling props
+  variant?: 'default' | 'outlined' | 'filled' | 'minimal';
+  size?: 'small' | 'medium' | 'large';
+  color?: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'pink' | 'gray';
+  className?: string;
+}
+
+export interface SkeletonProps {
+  // Shape props
+  variant?: 'text' | 'rectangular' | 'circular' | 'rounded';
+  width?: string;
+  height?: string;
+  lines?: number;
+  
+  // Animation props
+  animation?: 'pulse' | 'wave' | 'none';
+  
+  // Styling props
+  className?: string;
+  style?: CSSProperties;
+}
+
+export interface SkeletonCardProps {
+  showAvatar?: boolean;
+  lines?: number;
+  className?: string;
+}
+
+export interface SkeletonTableProps {
+  rows?: number;
+  columns?: number;
+  showHeader?: boolean;
+  className?: string;
+}
+
+export interface SkeletonListProps {
+  items?: number;
+  showAvatar?: boolean;
+  showAction?: boolean;
+  className?: string;
+}
+
+export interface SkeletonProfileProps {
+  className?: string;
+}
+
+export interface SkeletonImageProps {
+  width?: string;
+  height?: string;
+  className?: string;
+}
+
+export interface TagCollections {
+  skills: string[];
+  categories: string[];
+  priorities: string[];
+  status: string[];
+}
+
 declare const Navbar: React.FC<NavbarProps>;
 declare const Input: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>>;
 declare const Search: React.ForwardRefExoticComponent<SearchProps & React.RefAttributes<HTMLInputElement>>;
 declare const Modal: React.FC<ModalProps>;
+declare const Loader: React.FC<LoaderProps>;
+declare const Tags: React.FC<TagsProps>;
+declare const Skeleton: React.FC<SkeletonProps>;
+declare const SkeletonCard: React.FC<SkeletonCardProps>;
+declare const SkeletonTable: React.FC<SkeletonTableProps>;
+declare const SkeletonList: React.FC<SkeletonListProps>;
+declare const SkeletonProfile: React.FC<SkeletonProfileProps>;
+declare const SkeletonImage: React.FC<SkeletonImageProps>;
+declare const TagCollections: TagCollections;
 
 export default Navbar;
-export { Navbar, Input, Search, Modal };
+export { 
+  Navbar, 
+  Input, 
+  Search, 
+  Modal, 
+  Loader, 
+  Tags, 
+  TagCollections,
+  Skeleton,
+  SkeletonCard,
+  SkeletonTable,
+  SkeletonList,
+  SkeletonProfile,
+  SkeletonImage
+};
