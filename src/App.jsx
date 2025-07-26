@@ -28,6 +28,7 @@ import { useNavigate, useLocation, BrowserRouter, Routes, Route } from "react-ro
 import Navbar from "./components/Navbar";
 import { Input, Modal, Search } from "./components";
 import MainDemo from "./MainDemo";
+import NewComponentsDemo from "./NewComponentsDemo";
 
 
 // Demo Component
@@ -36,6 +37,7 @@ const App = () => {
 
   const topNavItems = [
     { icon: <IconHome2 />, text: "Dashboard", path: "/" },
+    { icon: <IconSquareChevronsLeft />, text: "New Components", path: "/new-components" },
     { 
       icon: <IconChartBarPopular />, 
       text: "Analytics", 
@@ -105,6 +107,7 @@ const App = () => {
       >
         <Routes>
           <Route path="/" element={<MainDemo />} />
+          <Route path="/new-components" element={<NewComponentsDemo />} />
           <Route path="/analytics" element={<AnalyticsContent />} />
           <Route path="/analytics/overview" element={<AnalyticsOverviewContent />} />
           <Route path="/analytics/users" element={<UserAnalyticsContent />} />
